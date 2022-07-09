@@ -72,6 +72,7 @@ header {
   width: 100%;
   height: 85px;
   background-color: #5f5b5b;
+  /* Media queries for 768px min-width */
 }
 header .container {
   width: 100%;
@@ -84,13 +85,14 @@ header .container .head {
   justify-content: space-between;
   align-items: center;
 }
+header .container .head .menu {
+  cursor: pointer;
+}
 header .container .nav-bar {
   display: none;
   position: relative;
   width: 100%;
   background-color: #5f5b5b;
-  -webkit-backdrop-filter: blur(5px);
-          backdrop-filter: blur(5px);
 }
 header .container .nav-bar .nav-list {
   position: fixed;
@@ -111,13 +113,46 @@ header .container .nav-bar .nav-list a {
   color: #fff;
   font-family: "Caveat Brush", monospace, "cursive", sans-serif;
   cursor: pointer;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 header .container .nav-bar .nav-list a:hover {
   color: #9cebad;
 }
 header .container .profile {
   display: none;
+}
+@media screen and (min-width: 768px) {
+  header .container {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  header .container .head {
+    display: block;
+  }
+  header .container .menu {
+    display: none;
+  }
+  header .container .nav-bar {
+    display: block;
+    margin-right: 60px;
+  }
+  header .container .nav-bar .nav-list {
+    display: flex;
+    position: relative;
+    padding-top: 0;
+    gap: 24px;
+    width: inherit;
+    background-color: #5f5b5b;
+    margin-top: 0;
+    height: inherit;
+    justify-content: flex-end;
+  }
+  header .container .profile {
+    display: block;
+  }
 }
 
 /* Hero-Page Styling */
@@ -140,10 +175,22 @@ header .container .profile {
   text-align: center;
   line-height: 2.5rem;
 }
+@media screen and (min-width: 768px) {
+  .hero-page .container h1 {
+    font-size: 3rem;
+    text-align: left;
+    line-height: 3.5rem;
+  }
+}
 .hero-page .container h1 span {
   color: #a74d4d;
   font-family: "Caveat Brush", monospace, "cursive", sans-serif;
   font-size: 2rem;
+}
+@media screen and (min-width: 768px) {
+  .hero-page .container h1 span {
+    font-size: 3.5rem;
+  }
 }
 .hero-page .container button {
   background-color: #9cebad;
@@ -200,10 +247,20 @@ header .container .profile {
   width: 100%;
   height: auto;
 }
+@media screen and (min-width: 768px) {
+  .library .container .book-shelf {
+    margin: 24px 0;
+  }
+}
 
 /* Footer Section */
 footer {
   text-align: center;
   font-size: 1rem;
   line-height: 1rem;
+}
+@media screen and (min-width: 768px) {
+  footer {
+    font-size: 1.25rem;
+  }
 }/*# sourceMappingURL=main.css.map */

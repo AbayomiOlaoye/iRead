@@ -92,6 +92,10 @@ header {
       display: flex;
       justify-content: space-between;
       align-items: center;
+
+      .menu {
+        cursor: pointer;
+      }
     }
 
     .nav-bar {
@@ -99,7 +103,6 @@ header {
       position: relative;
       width: 100%;
       background-color: #5f5b5b;
-      backdrop-filter: blur(5px);
 
       .nav-list {
         position: fixed;
@@ -120,7 +123,7 @@ header {
           color: #fff;
           font-family: $--ff-prime;
           cursor: pointer;
-          font-size: 2rem;
+          font-size: 1.5rem;
 
           &:hover {
             color: $--primaryColor;
@@ -131,6 +134,46 @@ header {
 
     .profile {
       display: none;
+    }
+  }
+
+  /* Media queries for 768px min-width */
+  @media screen and (min-width: 768px) {
+    .container {
+      width: 90%;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  
+      .head {
+        display: block;
+      }
+  
+      .menu {
+        display: none;
+      }
+  
+      .nav-bar {
+        display: block;
+        margin-right: 60px;
+        .nav-list {
+          display: flex;
+          position: relative;
+          padding-top: 0;
+          gap: 24px;
+          width: inherit;
+          background-color: #5f5b5b;
+          margin-top: 0;
+          height: inherit;
+          justify-content: flex-end;
+          
+        }
+      }
+
+      .profile {
+        display: block;
+      }
     }
   }
 }
@@ -155,10 +198,20 @@ header {
       text-align: center;
       line-height: 2.5rem;
 
+      @media screen and (min-width: 768px) {
+          font-size: 3rem;
+          text-align: left;
+          line-height: 3.5rem;
+      }
+
       span {
         color: $--varColor;
         font-family: $--ff-prime;
         font-size: 2rem;
+
+        @media screen and (min-width: 768px) {
+            font-size: 3.5rem;
+        }
       }
     }
 
@@ -225,6 +278,10 @@ header {
     .book-shelf {
       width: 100%;
       height: auto;
+
+      @media screen and (min-width: 768px) {
+        margin: 24px 0;
+      }
     }
   }
 }
@@ -234,4 +291,8 @@ footer {
   text-align: center;
   font-size: 1rem;
   line-height: 1rem;
+
+  @media screen and (min-width: 768px) {
+    font-size: 1.25rem;
+  }
 }
