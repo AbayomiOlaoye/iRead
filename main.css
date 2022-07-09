@@ -1,0 +1,209 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat&family=Caveat+Brush&display=swap");
+/* Variable declarations for fonts and colors  */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+ul,
+ol {
+  padding: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: "Caveat", monospace, "cursive", sans-serif;
+  background-image: url(./images/main-bg.png);
+}
+
+ul,
+ol {
+  list-style-type: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+article > * + * {
+  margin-top: 1em;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/* Header Section */
+header {
+  width: 100%;
+  height: 85px;
+  background-color: #5f5b5b;
+}
+header .container {
+  width: 100%;
+  position: relative;
+  height: inherit;
+  padding: 0.625rem;
+}
+header .container .head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .container .nav-bar {
+  display: none;
+  position: relative;
+  width: 100%;
+  background-color: #5f5b5b;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+}
+header .container .nav-bar .nav-list {
+  position: fixed;
+  padding-top: 2rem;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  width: 100%;
+  display: block;
+  background-color: #5f5b5b;
+  margin-top: 85px;
+  height: 300px;
+  text-align: center;
+}
+header .container .nav-bar .nav-list a {
+  padding-top: 2.5rem;
+  text-decoration: none;
+  color: #fff;
+  font-family: "Caveat Brush", monospace, "cursive", sans-serif;
+  cursor: pointer;
+  font-size: 2rem;
+}
+header .container .nav-bar .nav-list a:hover {
+  color: #9cebad;
+}
+header .container .profile {
+  display: none;
+}
+
+/* Hero-Page Styling */
+.hero-page {
+  width: 100%;
+  height: auto;
+}
+.hero-page .container {
+  width: 100%;
+  height: 100%;
+  margin: 100px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.hero-page .container h1 {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  text-align: center;
+  line-height: 2.5rem;
+}
+.hero-page .container h1 span {
+  color: #a74d4d;
+  font-family: "Caveat Brush", monospace, "cursive", sans-serif;
+  font-size: 2rem;
+}
+.hero-page .container button {
+  background-color: #9cebad;
+  border: none;
+  border-radius: 30px;
+  margin-top: 1.5rem;
+  padding: 0.625rem 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Caveat Brush", monospace, "cursive", sans-serif;
+  font-size: 1.5rem;
+  color: #5f5b5b;
+  text-transform: uppercase;
+  transition: color 300ms ease;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25), 0 4px 4px 0 rgba(0, 0, 0, 0.25), 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
+.hero-page .container button:hover {
+  color: #333;
+}
+.hero-page .container button:hover img {
+  transition: color 0.5s ease-in-out;
+  transform: scale(1.05);
+}
+.hero-page .container button:active {
+  background-color: #333;
+  color: #9cebad;
+}
+.hero-page .container button:active img {
+  background-color: #9cebad;
+}
+.hero-page .container button img {
+  margin-right: 0.5rem;
+}
+
+/* Bookshelf section */
+.library {
+  width: 100%;
+  height: auto;
+}
+.library .container {
+  width: 100%;
+  height: auto;
+}
+.library .container h2 {
+  text-align: center;
+  font-size: 1.25rem;
+}
+.library .container hr {
+  height: 3px;
+  color: #9cebad;
+}
+.library .container .book-shelf {
+  width: 100%;
+  height: auto;
+}
+
+/* Footer Section */
+footer {
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1rem;
+}/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,237 @@
+// Load fonts from external api
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Caveat+Brush&display=swap');
+
+/* Variable declarations for fonts and colors  */
+$--secColor: #5f5b5b;
+$--primaryColor: #9cebad;
+$--varColor: #a74d4d;
+$--fontFade: #333;
+
+$--ff-prime: 'Caveat Brush', monospace, 'cursive', sans-serif;
+$--ff-norm: 'Caveat', monospace, 'cursive', sans-serif; 
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+ul,
+ol {
+  padding: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: $--ff-norm;
+  background-image: url(./images/main-bg.png);
+}
+
+ul,
+ol {
+  list-style-type: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+article > * + * {
+  margin-top: 1em;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Header Section */
+header {
+  width: 100%;
+  height: 85px;
+  background-color: $--secColor;
+
+  .container {
+    width: 100%;
+    position: relative;
+    height: inherit;
+    padding: 0.625rem;
+
+    .head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-bar {
+      display: none;
+      position: relative;
+      width: 100%;
+      background-color: #5f5b5b;
+      backdrop-filter: blur(5px);
+
+      .nav-list {
+        position: fixed;
+        padding-top: 2rem;
+        left: 0;
+        bottom: 0;
+        top: 0;
+        width: 100%;
+        display: block;
+        background-color: #5f5b5b;
+        margin-top: 85px;
+        height: 300px;
+        text-align: center;
+
+        a {
+          padding-top: 2.5rem;
+          text-decoration: none;
+          color: #fff;
+          font-family: $--ff-prime;
+          cursor: pointer;
+          font-size: 2rem;
+
+          &:hover {
+            color: $--primaryColor;
+          }
+        }
+      }
+    }
+
+    .profile {
+      display: none;
+    }
+  }
+}
+
+/* Hero-Page Styling */
+.hero-page {
+  width: 100%;
+  height: auto;
+
+  .container {
+    width: 100%;
+    height: 100%;
+    margin: 100px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+      text-transform: uppercase;
+      font-size: 1.5rem;
+      text-align: center;
+      line-height: 2.5rem;
+
+      span {
+        color: $--varColor;
+        font-family: $--ff-prime;
+        font-size: 2rem;
+      }
+    }
+
+    button {
+      background-color: $--primaryColor;
+      border: none;
+      border-radius: 30px;
+      margin-top: 1.5rem;
+      padding: 0.625rem 1.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: $--ff-prime;
+      font-size: 1.5rem;
+      color: $--secColor;
+      text-transform: uppercase;
+      transition: color 300ms ease;
+      box-shadow: 0 4px 4px 0 rgba($color: #000000, $alpha: 0.25), 0 4px 4px 0 rgba($color: #000000, $alpha: 0.25), 0 4px 4px 0 rgba($color: #000000, $alpha: 0.25);
+
+      &:hover {
+        color: $--fontFade;
+
+        img {
+          transition: color 0.5s ease-in-out;
+          transform: scale(1.05);
+        }
+      }
+
+      &:active {
+        background-color: $--fontFade;
+        color: $--primaryColor;
+
+        img {
+          background-color: $--primaryColor;
+        }
+      }
+
+      img {
+        margin-right: 0.5rem;
+      }
+    }
+  }
+}
+
+/* Bookshelf section */
+.library {
+  width: 100%;
+  height: auto;
+ 
+  .container {
+    width: 100%;
+    height: auto;
+
+    h2 {
+      text-align: center;
+      font-size: 1.25rem
+    }
+
+    hr {
+      height: 3px;
+      color: $--primaryColor;
+    }
+
+    .book-shelf {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+/* Footer Section */
+footer {
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1rem;
+}

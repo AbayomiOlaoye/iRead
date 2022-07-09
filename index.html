@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="main.css">
   <title>iRead</title>
 </head>
 <body>
@@ -11,10 +12,9 @@
     <div class="container">
       <div class="head">
         <img src="./images/logo.png" alt="logo">
-        <img src="./images/menu.png" alt="menu icon">
+        <img src="./images/menu.png" alt="menu icon" class="menu">
       </div>
       <nav class="nav-bar">
-        <img src="./images/exit.png" alt="exit menu">
         <ul class="nav-list">
           <li><a href="index.html">Home</a></li>
           <li><a href="#">Library</a></li>
@@ -33,16 +33,19 @@
         <h1>Add <br>
           a <span>new book</span> to collection
         </h1>
-          <button type="button">
-            <img src="./images/add.svg" alt="add more books button">
-            Add new book
-          </button>
+        <button type="button">
+          <img src="./images/add.svg" alt="add more books button">
+          Add new book
+        </button>
       </div>
     </section>
-    <section class="book-shelf">
+    <section class="library">
       <div class="container">
         <h2>Recently Added Books</h2>
         <hr>
+        <div class="book-shelf">
+
+        </div>
       </div>
     </section>
   </main>
@@ -52,5 +55,7 @@
       Here's a <a href="https://github.com/MindPrepDev/iRead">link to my GitHub repository.</a>
     </small>
   </footer>
+
+  <script src="main.js"></script>
 </body>
 </html>
