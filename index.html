@@ -33,10 +33,45 @@
         <h1>Add <br>
           a <span>new book</span> to collection
         </h1>
-        <button type="button">
+        <button type="button" class="add-book">
           <img src="./images/add.svg" alt="add more books button">
           Add new book
         </button>
+
+        <!-- Form for new books -->
+        <div class="form-section">
+          <div class="blurb">
+            <div class="form-header">
+              <img src="./images/project-title.png" alt="Image of an open book">
+              <div class="wrap-text">
+                <h3>Got a new book?</h3>
+                <p>(Stack it up using the form below)</p>
+              </div>
+              <img src="./images/exit.png" alt="exit button" class="exit-btn">
+            </div>
+            <form action="#" class="form">
+              <label for="title">Title</label>
+              <input type="text" name="title" id="title" placeholder="Maximizing your potentials" maxlength="200" required>
+              <label for="author">Author</label>
+              <input type="text" name="author" id="author" placeholder="Dr. Myles Munroe" maxlength="50" required>
+              <label for="pages">No. of pages</label>
+              <input type="number" name="page" id="pages" placeholder="368" min="100" required>
+              <label for="status">Status</label>
+              <select name="status" id="status" required>
+                <option value="Just bought it">I just bought it</option>
+                <option value="Just started the reading">Just started reading it</option>
+                <option value="Almost done">Almost done</option>
+                <option value="Completed">Done reading</option>
+              </select>
+              <label for="theme">About</label>
+              <textarea name="theme" id="theme" cols="30" rows="4" placeholder="Please describe the book in just 150 words or less" maxlength="150"></textarea>
+              <button type="submit" class="shelf-book">
+                <img src="./images/add.svg" alt="add more books button">
+                Add new book
+              </button>
+            </form>
+          </div>
+        </div>
       </div>
     </section>
     <section class="library">
