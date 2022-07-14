@@ -268,7 +268,6 @@ header {
       backdrop-filter: blur(5px);
 
       .blurb {
-        //position: absolute;
         display: flex;
         flex-direction: column;
         font-size: large;
@@ -310,6 +309,11 @@ header {
         .form {
           display: flex;
           flex-direction: column;
+
+          input,
+          select {
+            text-transform: capitalize;
+          }
 
           input,
           select,
@@ -359,9 +363,54 @@ header {
       color: $--primaryColor;
     }
 
-    .book-shelf {
-      width: 100%;
+    .shelf {
+      width: 80%;
       height: auto;
+      display: grid;
+      gap: 0.5rem;
+      margin: auto;
+
+      .book-card {
+        width: 100%;
+        background-color: $--primaryColor;
+        padding: 0.5rem;
+        text-align: center;
+        border-radius: 10px;
+        box-shadow: 0 2px 2px rgba($color: #000000, $alpha: 0.25);
+
+        h3 {
+          font-family: $--ff-prime;
+        }
+
+        span {
+          font-weight: bold;
+          background-color: $--secColor;
+          color: #fff;
+          padding: 0.25rem;
+          border-radius: 10px;
+        }
+
+        a {
+
+        }
+
+        select {
+          display: none;
+          width: 70%;
+        }
+
+        p {
+          margin: 1rem 0;
+        }
+
+        .writer {
+          background-color: $--varColor;
+          color: #fff;
+          width: 100%;
+          padding: 0.25rem;
+          margin: 0.5rem 0;
+        }
+      }
 
       @media screen and (min-width: 768px) {
         margin: 24px 0;
@@ -372,10 +421,19 @@ header {
 
 /* Footer Section */
 footer {
+  margin-top: 1.5rem;
   text-align: center;
-  font-size: 1rem;
-  line-height: 1rem;
+  font-size: 1.25rem;
+  line-height: 1.25rem;
   padding: 1rem;
+  color: #fff;
+  background-color: $--secColor;
+
+  a {
+    color: $--primaryColor;
+    font-size: 105%;
+    font-family: $--ff-prime;
+  }
 
   @media screen and (min-width: 768px) {
     font-size: 1.25rem;

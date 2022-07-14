@@ -278,6 +278,10 @@ header .container .profile {
   flex-direction: column;
 }
 .hero-page .container .form-section .blurb .form input,
+.hero-page .container .form-section .blurb .form select {
+  text-transform: capitalize;
+}
+.hero-page .container .form-section .blurb .form input,
 .hero-page .container .form-section .blurb .form select,
 .hero-page .container .form-section .blurb .form textarea {
   outline: none;
@@ -321,22 +325,65 @@ header .container .profile {
   height: 3px;
   color: #9cebad;
 }
-.library .container .book-shelf {
-  width: 100%;
+.library .container .shelf {
+  width: 80%;
   height: auto;
+  display: grid;
+  gap: 0.5rem;
+  margin: auto;
+}
+.library .container .shelf .book-card {
+  width: 100%;
+  background-color: #9cebad;
+  padding: 0.5rem;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+}
+.library .container .shelf .book-card h3 {
+  font-family: "Caveat Brush", monospace, "cursive", sans-serif;
+}
+.library .container .shelf .book-card span {
+  font-weight: bold;
+  background-color: #5f5b5b;
+  color: #fff;
+  padding: 0.25rem;
+  border-radius: 10px;
+}
+.library .container .shelf .book-card select {
+  display: none;
+  width: 70%;
+}
+.library .container .shelf .book-card p {
+  margin: 1rem 0;
+}
+.library .container .shelf .book-card .writer {
+  background-color: #a74d4d;
+  color: #fff;
+  width: 100%;
+  padding: 0.25rem;
+  margin: 0.5rem 0;
 }
 @media screen and (min-width: 768px) {
-  .library .container .book-shelf {
+  .library .container .shelf {
     margin: 24px 0;
   }
 }
 
 /* Footer Section */
 footer {
+  margin-top: 1.5rem;
   text-align: center;
-  font-size: 1rem;
-  line-height: 1rem;
+  font-size: 1.25rem;
+  line-height: 1.25rem;
   padding: 1rem;
+  color: #fff;
+  background-color: #5f5b5b;
+}
+footer a {
+  color: #9cebad;
+  font-size: 105%;
+  font-family: "Caveat Brush", monospace, "cursive", sans-serif;
 }
 @media screen and (min-width: 768px) {
   footer {

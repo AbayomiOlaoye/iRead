@@ -55,9 +55,9 @@
               <label for="author">Author</label>
               <input type="text" name="author" id="author" placeholder="Dr. Myles Munroe" maxlength="50" required>
               <label for="pages">No. of pages</label>
-              <input type="number" name="page" id="pages" placeholder="368" min="100" required>
+              <input type="number" name="pages" id="pages" placeholder="368" min="100" required>
               <label for="status">Status</label>
-              <select name="status" id="status" required>
+              <select name="status" id="status">
                 <option value="Just bought it">I just bought it</option>
                 <option value="Just started the reading">Just started reading it</option>
                 <option value="Almost done">Almost done</option>
@@ -78,8 +78,45 @@
       <div class="container">
         <h2>Recently Added Books</h2>
         <hr>
-        <div class="book-shelf">
-          <!-- Book shelf to be filled dynamcally using JavaScript objects and constructor function -->
+        <div class="shelf">
+          <!-- Book shelf to be filled dynamically using JavaScript objects and constructor function -->
+          <div class="book-card">
+            <h3>Single, Married and Divorced</h3>
+            <p class="writer">A book written by Dr. Myles Munroe</p>
+            <p><span class="sub">Status:</span> <span>Almost Done</span>  <a href="#">Update Status</a></p>
+            <select name="updateStatus">
+              <option value="Just bought it">I just bought it</option>
+              <option value="Just started the reading">Just started reading it</option>
+              <option value="Almost done">Almost done</option>
+              <option value="Completed">Done reading</option>
+            </select>
+            <div class="brief">
+              <p><span class="sub">Brief:</span><br>
+                  An eye-opening scriptural truths and dispositions about these
+                  often misconstrued stages of life. I took a keen approach at inspiring,
+                  warning and uplifting its readers.
+              </p>
+            </div>
+          </div>
+
+          <div class="book-card">
+            <h3>85 Core Values Of Life</h3>
+            <p class="writer">A book written by Robert Williams</p>
+            <p><span class="sub">Status:</span>  <span>I just bought it</span> <a href="#">Update Status</a></p>
+            <select name="updateStatus">
+              <option value="Just bought it">I just bought it</option>
+              <option value="Just started the reading">Just started reading it</option>
+              <option value="Almost done">Almost done</option>
+              <option value="Completed">Done reading</option>
+            </select>
+            <div class="brief">
+              <p><span class="sub">Brief:</span><br>
+                  Such an astute eloquence and compilation of working principles, Values
+                 and basic characteristics needed for meaningful existence here in this space,
+                 for influence.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
