@@ -72,9 +72,16 @@ function addBooks() {
   return iReadShelf.push(newStack);
 }
 
+// Testing Local Storage
+function storage() {
+  const bookData = JSON.stringify(iReadShelf);
+  localStorage.setItem('booksRead', bookData);
+}
+
 shelfBook.addEventListener('click', (e) => {
   e.preventDefault();
   addBooks();
+  storage();
   form.style.display = 'none';
 });
 
