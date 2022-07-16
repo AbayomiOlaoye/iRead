@@ -91,21 +91,20 @@ header .container .head .menu {
 }
 header .container .nav-bar {
   display: none;
-  position: relative;
   width: 100%;
   background-color: #5f5b5b;
+  height: 100%;
 }
 header .container .nav-bar .nav-list {
   position: fixed;
-  padding-top: 2rem;
+  line-height: 4rem;
+  padding-top: 5rem;
   left: 0;
-  bottom: 0;
   top: 0;
-  width: 100%;
+  width: 80%;
+  height: inherit;
   display: block;
   background-color: #5f5b5b;
-  margin-top: 85px;
-  height: 300px;
   text-align: center;
 }
 header .container .nav-bar .nav-list a {
@@ -147,7 +146,6 @@ header .container .profile {
     gap: 24px;
     width: inherit;
     background-color: #5f5b5b;
-    margin-top: 0;
     height: inherit;
     justify-content: flex-end;
   }
@@ -326,31 +324,36 @@ header .container .profile {
   color: #9cebad;
 }
 .library .container .shelf {
-  width: 80%;
+  width: 100%;
   height: auto;
   display: grid;
   gap: 0.5rem;
   margin: auto;
 }
 .library .container .shelf .book-card {
-  width: 100%;
+  width: 60%;
   background-color: #9cebad;
   padding: 0.5rem;
   text-align: center;
   border-radius: 10px;
+  margin: auto;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
 }
 .library .container .shelf .book-card h3 {
   font-family: "Caveat Brush", monospace, "cursive", sans-serif;
 }
-.library .container .shelf .book-card span {
+.library .container .shelf .book-card span:nth-child(2) {
   font-weight: bold;
   background-color: #5f5b5b;
   color: #fff;
   padding: 0.25rem;
   border-radius: 10px;
 }
-.library .container .shelf .book-card select {
+.library .container .shelf .book-card span:nth-child(1) {
+  color: #a74d4d;
+  font-size: larger;
+}
+.library .container .shelf .book-card .updateStatus {
   display: none;
   width: 70%;
 }
@@ -365,8 +368,14 @@ header .container .profile {
   margin: 0.5rem 0;
 }
 @media screen and (min-width: 768px) {
+  .library .container .shelf .book-card {
+    max-width: 30%;
+  }
+}
+@media screen and (min-width: 768px) {
   .library .container .shelf {
     margin: 24px 0;
+    display: flex;
   }
 }
 

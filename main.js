@@ -5,7 +5,7 @@ const menu = document.querySelector('.menu');
 const navBar = document.querySelector('.nav-bar');
 const links = document.querySelectorAll('.nav-list a');
 
-// LOGIC for toggling
+// LOGIC for mobile menu toggling
 menu.addEventListener('click', () => {
   if (navBar.style.display === 'none') {
     navBar.style.display = 'contents';
@@ -18,6 +18,12 @@ links.forEach((link) => {
   link.addEventListener('click', () => {
     navBar.style.display = 'none';
   });
+});
+
+window.addEventListener('click', (e) => {
+  if (e.target === navBar) {
+    navBar.style.display = 'none';
+  }
 });
 
 // Form control logic
@@ -43,7 +49,34 @@ window.addEventListener('click', (e) => {
   }
 });
 
-// // Declaring and initiating an empty array for book collection as user fills the form.
+// Hide Book Status until button is clicked
+const updateCard = document.querySelectorAll('.updateStatus');
+const updateButton = document.querySelectorAll('.up-btn');
+const alert = document.querySelectorAll('.book-alert');
+const line = document.getElementsByClassName('book-card').length;
+
+// Iterating the shelved books
+for (let i = 0; i < line; i += 1) {
+  updateButton[i].addEventListener('mouseover', () => {
+    updateCard[i].style.display = 'inline-block';
+  });
+
+  // Update book status realtime
+  updateCard[i].addEventListener('change', () => {
+    alert[i].textContent = updateCard[i].value;
+    updateCard[i].style.display = 'none';
+  });
+
+  updateCard[i].addEventListener('mouseout', () => {
+    updateCard[i].style.display = 'none';
+  });
+
+  updateCard[i].addEventListener('click', () => {
+    updateCard[i].style.display = 'none';
+  });
+}
+
+// Declaring and initiating an empty array for book collection as user fills the form.
 const iReadShelf = [];
 
 // Constructor function for book objects

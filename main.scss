@@ -100,21 +100,20 @@ header {
 
     .nav-bar {
       display: none;
-      position: relative;
       width: 100%;
       background-color: #5f5b5b;
+      height: 100%;
 
       .nav-list {
         position: fixed;
-        padding-top: 2rem;
+        line-height: 4rem;
+        padding-top: 5rem;
         left: 0;
-        bottom: 0;
         top: 0;
-        width: 100%;
+        width: 80%;
+        height: inherit;
         display: block;
         background-color: #5f5b5b;
-        margin-top: 85px;
-        height: 300px;
         text-align: center;
 
         a {
@@ -164,7 +163,6 @@ header {
           gap: 24px;
           width: inherit;
           background-color: #5f5b5b;
-          margin-top: 0;
           height: inherit;
           justify-content: flex-end;
           
@@ -364,25 +362,26 @@ header {
     }
 
     .shelf {
-      width: 80%;
+      width: 100%;
       height: auto;
       display: grid;
       gap: 0.5rem;
       margin: auto;
 
       .book-card {
-        width: 100%;
+        width: 60%;
         background-color: $--primaryColor;
         padding: 0.5rem;
         text-align: center;
         border-radius: 10px;
+        margin: auto;
         box-shadow: 0 2px 2px rgba($color: #000000, $alpha: 0.25);
 
         h3 {
           font-family: $--ff-prime;
         }
 
-        span {
+        span:nth-child(2){
           font-weight: bold;
           background-color: $--secColor;
           color: #fff;
@@ -390,11 +389,12 @@ header {
           border-radius: 10px;
         }
 
-        // a {
+        span:nth-child(1){
+          color: $--varColor;
+          font-size: larger;
+        }
 
-        // }
-
-        select {
+        .updateStatus {
           display: none;
           width: 70%;
         }
@@ -410,10 +410,15 @@ header {
           padding: 0.25rem;
           margin: 0.5rem 0;
         }
+
+        @media screen and (min-width: 768px) {
+          max-width: 30%;
+        }
       }
 
       @media screen and (min-width: 768px) {
         margin: 24px 0;
+        display: flex;
       }
     }
   }
