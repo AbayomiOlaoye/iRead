@@ -206,6 +206,7 @@ header {
         color: $--varColor;
         font-family: $--ff-prime;
         font-size: 2rem;
+        text-shadow: 2px 2px 2px #9cebad, 2px 2px 2px #333;
 
         @media screen and (min-width: 768px) {
             font-size: 3.5rem;
@@ -395,8 +396,9 @@ header {
         }
 
         .updateStatus {
-          display: none;
+          //display: none;
           width: 70%;
+          text-align: center;
         }
 
         p {
@@ -409,6 +411,10 @@ header {
           width: 100%;
           padding: 0.25rem;
           margin: 0.5rem 0;
+        }
+
+        .brief {
+          font-size: 1.15rem;
         }
 
         @media screen and (min-width: 768px) {

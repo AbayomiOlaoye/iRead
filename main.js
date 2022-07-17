@@ -49,35 +49,33 @@ window.addEventListener('click', (e) => {
   }
 });
 
-// Hide Book Status until button is clicked
-const updateCard = document.querySelectorAll('.updateStatus');
-const updateButton = document.querySelectorAll('.up-btn');
-const alert = document.querySelectorAll('.book-alert');
-const line = document.getElementsByClassName('book-card').length;
-
-// Iterating the shelved books
-for (let i = 0; i < line; i += 1) {
-  updateButton[i].addEventListener('mouseover', () => {
-    updateCard[i].style.display = 'inline-block';
-  });
-
-  // Update book status realtime
-  updateCard[i].addEventListener('change', () => {
-    alert[i].textContent = updateCard[i].value;
-    updateCard[i].style.display = 'none';
-  });
-
-  updateCard[i].addEventListener('mouseout', () => {
-    updateCard[i].style.display = 'none';
-  });
-
-  updateCard[i].addEventListener('click', () => {
-    updateCard[i].style.display = 'none';
-  });
-}
-
 // Declaring and initiating an empty array for book collection as user fills the form.
-const iReadShelf = [];
+const iReadShelf = [
+  {
+    title: 'Single, Married and Divorced',
+    author: 'Myles Munroe',
+    pages: 285,
+    status: ['Just bought it', 'Just started the reading', 'Almost done', 'Completed'],
+    theme: 'An eye-opening scriptural truths and dispositions about these often misconstrued stages of life. It took a keen approach at inspiring, warning and uplifting its readers.',
+    info: function commendReader() { return `A book written by ${this.author}`; },
+  },
+  {
+    title: '85 Core Values Of Life',
+    author: 'Robert Williams',
+    pages: 385,
+    status: ['Just bought it', 'Just started the reading', 'Almost done', 'Completed'],
+    theme: 'Such an astute eloquence and compilation of working principles, values and basic characteristics needed for meaningful existence here in this space for influence.',
+    info: function authorName() { return `A book written by ${this.author}`; },
+  },
+  {
+    title: 'Single, Married and Divorced',
+    author: 'Myles Munroe',
+    pages: 285,
+    status: ['Just bought it', 'Just started the reading', 'Almost done', 'Completed'],
+    theme: 'An eye-opening scriptural truths and dispositions about these often misconstrued stages of life. I took a keen approach at inspiring, warning and uplifting its readers.',
+    info: function commendReader() { return `A book written by ${this.author}`; },
+  },
+];
 
 // Constructor function for book objects
 function Book(title, author, pages, status, theme) {
@@ -86,7 +84,7 @@ function Book(title, author, pages, status, theme) {
   this.pages = pages;
   this.status = status;
   this.theme = theme;
-  this.info = function commendReader() {
+  this.info = function authorName() {
     return `A book written piece by ${this.author}.`;
   };
 }
@@ -98,11 +96,12 @@ const bookPages = document.querySelector('#pages');
 const bookStatus = document.querySelector('#status');
 const bookTheme = document.querySelector('#theme');
 const shelfBook = document.querySelector('.shelf-book');
+
 let newStack;
 function addBooks() {
   newStack = new Book(bookTitle.value, bookAuthor.value, bookPages.value,
     bookStatus.value, bookTheme.value);
-  return iReadShelf.push(newStack);
+  iReadShelf.push(newStack);
 }
 
 // Testing Local Storage
@@ -118,12 +117,47 @@ shelfBook.addEventListener('click', (e) => {
   form.style.display = 'none';
 });
 
-// Designing the book cards
-// function designBookShelf(book) {
-//   return `<div class="book-card">
-//     <h2>${iReadShelf[0].title}</h2>
-//   </div>`;
-// }
+document.addEventListener('DOMContentLoaded', () => {
+  // Designing the book cards
+  function unitCard(ebook) {
+    return `<div class="book-card">
+            <h3>${ebook.title}</h3>
+            <p class="writer">${ebook.info()}</p>
+            <p><span class="sub">Status:</span> <span class="book-alert">Almost Done</span> <a class="up-btn" href="#">Update Status</a></p>
+            <label for="updateStatus">Have you read it?</label><br>
+            <select class="updateStatus" name="updateStatus">
+              <option selected value="Just bought it">I just bought it</option>
+              <option value="Just started the reading">Just started reading it</option>
+              <option value="Almost done">Almost done</option>
+              <option value="Completed">Done reading</option>
+            </select>
+            <div class="brief">
+              <p><span class="sub">Brief:</span><br>
+                ${ebook.theme}
+              </p>
+            </div>
+          </div>`;
+  }
 
-// Writing expressions to put books on shelf
-// document.querySelector('.container').innerHTML = ``
+  const upBook = document.querySelector('.shelf');
+  upBook.innerHTML = `${iReadShelf.map(unitCard).join('')}`;
+});
+
+shelfBook.addEventListener('submit', () => {
+
+});
+// Hide Book Status until button is clicked
+// Update book status realtime
+
+// updateCard[i].addEventListener('change', () => {
+//   alert[i].textContent = updateCard[i].value;
+//   updateCard[i].style.display = 'none';
+// });
+
+// updateCard[i].addEventListener('mouseout', () => {
+//   updateCard[i].style.display = 'none';
+// });
+
+// updateCard[i].addEventListener('click', () => {
+//   updateCard[i].style.display = 'none';
+// });

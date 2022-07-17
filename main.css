@@ -186,6 +186,7 @@ header .container .profile {
   color: #a74d4d;
   font-family: "Caveat Brush", monospace, "cursive", sans-serif;
   font-size: 2rem;
+  text-shadow: 2px 2px 2px #9cebad, 2px 2px 2px #333;
 }
 @media screen and (min-width: 768px) {
   .hero-page .container h1 span {
@@ -354,8 +355,8 @@ header .container .profile {
   font-size: larger;
 }
 .library .container .shelf .book-card .updateStatus {
-  display: none;
   width: 70%;
+  text-align: center;
 }
 .library .container .shelf .book-card p {
   margin: 1rem 0;
@@ -366,6 +367,9 @@ header .container .profile {
   width: 100%;
   padding: 0.25rem;
   margin: 0.5rem 0;
+}
+.library .container .shelf .book-card .brief {
+  font-size: 1.15rem;
 }
 @media screen and (min-width: 768px) {
   .library .container .shelf .book-card {
