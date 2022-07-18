@@ -81,6 +81,8 @@ header {
   width: 100%;
   height: 85px;
   background-color: $--secColor;
+  box-shadow: 0 4px 4px 0 rgba($color: #000000, $alpha: 0.25);
+
 
   .container {
     width: 100%;
@@ -92,6 +94,7 @@ header {
       display: flex;
       justify-content: space-between;
       align-items: center;
+
 
       .menu {
         cursor: pointer;
@@ -171,6 +174,7 @@ header {
 
       .profile {
         display: block;
+        cursor: pointer;
       }
     }
   }
@@ -365,7 +369,8 @@ header {
     .shelf {
       width: 100%;
       height: auto;
-      display: grid;
+      display: flex;
+      flex-wrap: wrap;
       gap: 0.5rem;
       margin: auto;
 
@@ -380,6 +385,7 @@ header {
 
         h3 {
           font-family: $--ff-prime;
+          text-transform: capitalize;
         }
 
         span:nth-child(2){
@@ -396,7 +402,7 @@ header {
         }
 
         .updateStatus {
-          //display: none;
+          display: none;
           width: 70%;
           text-align: center;
         }
@@ -407,6 +413,7 @@ header {
 
         .writer {
           background-color: $--varColor;
+          text-transform: capitalize;
           color: #fff;
           width: 100%;
           padding: 0.25rem;
