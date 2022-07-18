@@ -88,9 +88,10 @@ class LibraryShelf {
 
   static addToList(book) {
     const upBook = document.querySelector('.shelf');
-    upBook.innerHTML += `
-              <div class="book-card">
-                <h3>${book.title} <i class="material-icons">cancel</i></h3>
+    const newCard = document.createElement('div');
+    newCard.className = ('new-card');
+    newCard.innerHTML += `
+                <h3>${book.title} <i class="material-icons icon">cancel</i></h3>
                 <p class="writer">${book.info()}</p>
                 <p><span class="sub">Status:</span> <span class="book-alert">Almost Done</span> <a class="up-btn" href="#">Update Status</a></p>
                 <select class="updateStatus" name="updateStatus">
@@ -103,8 +104,15 @@ class LibraryShelf {
                   <p><span class="sub">Brief:</span><br>
                     ${book.theme}
                   </p>
-                </div>
-              </div>`;
+                </div>`;
+    upBook.appendChild(newCard);
+  }
+
+  // Delete books
+  removeBook(pop) {
+    if (pop.classList.contains('icon')) {
+      this.LibraryShelf.addToList(null);
+    }
   }
 }
 
@@ -126,20 +134,37 @@ document.querySelector('.form').addEventListener('submit', (e) => {
 
   // Add to List
   LibraryShelf.addToList(newBook);
+  document.querySelector('.form').reset();
+  form.style.display = 'none';
 });
 
 document.addEventListener('DOMContentLoaded', () => {
   const qty = document.querySelectorAll('.book-card');
   const button = document.querySelectorAll('.up-btn');
   const select = document.querySelectorAll('.updateStatus');
+  const alert = document.querySelectorAll('.book-alert');
 
   for (let i = 0; i < qty.length; i += 1) {
     button[i].addEventListener('mouseover', () => {
       select[i].style.display = 'inline-flex';
     });
+
+    select[i].addEventListener('change', () => {
+      alert[i].innerHTML = select[i].value;
+      select[i].style.display = 'none';
+    });
+
+    document.querySelector('.icon')[i].addEventListener('click', () => {
+      LibraryShelf.removeBook(null);
+    });
   }
 });
 
+// document.querySelector('.icon').forEach((del) => {
+//   del.addEventListener('click', () => {
+
+//   });
+// });
 // // Testing Local Storage
 // function storage() {
 //   const bookData = JSON.stringify(iReadShelf);
@@ -150,5 +175,4 @@ document.addEventListener('DOMContentLoaded', () => {
 //   e.preventDefault();
 //   addBooks();
 //   storage();
-//   form.style.display = 'none';
 // });
