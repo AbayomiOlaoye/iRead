@@ -12,7 +12,7 @@ As I progress, it will make use of local storage so that users get to store and 
 - JavaScript
 
 ## Live Version 🌍
-Here is a link to the deployed version of my responsive [portfolio website](https://ireadbooks.github.io/).
+Here is a link to the deployed version of my responsive [portfolio website](https://mindprepdev.github.io/iRead).
 Feel free to check it out and share your view about it. 
 
 ## Getting Started 
