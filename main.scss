@@ -8,7 +8,8 @@ $--varColor: #a74d4d;
 $--fontFade: #333;
 
 $--ff-prime: 'Caveat Brush', monospace, 'cursive', sans-serif;
-$--ff-norm: 'Caveat', monospace, 'cursive', sans-serif; 
+
+$--ff-norm: 'Caveat', monospace, 'cursive', sans-serif;
 
 *,
 *::before,
@@ -81,6 +82,8 @@ header {
   width: 100%;
   height: 85px;
   background-color: $--secColor;
+  box-shadow: 0 4px 4px 0 rgba($color: #000000, $alpha: 0.25);
+
 
   .container {
     width: 100%;
@@ -92,6 +95,7 @@ header {
       display: flex;
       justify-content: space-between;
       align-items: center;
+
 
       .menu {
         cursor: pointer;
@@ -171,6 +175,7 @@ header {
 
       .profile {
         display: block;
+        cursor: pointer;
       }
     }
   }
@@ -265,6 +270,7 @@ header {
       color: #fff;
       background-color: rgba(51, 51, 51, 0.8);
       backdrop-filter: blur(5px);
+      z-index: 1000;
 
       .blurb {
         display: flex;
@@ -366,11 +372,14 @@ header {
       width: 100%;
       height: auto;
       display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
       gap: 0.5rem;
+      padding: 1.5rem;
       margin: auto;
 
       .book-card {
-        width: 60%;
+        width: 100%;
+        height: 350px;
         background-color: $--primaryColor;
         padding: 0.5rem;
         text-align: center;
@@ -379,7 +388,20 @@ header {
         box-shadow: 0 2px 2px rgba($color: #000000, $alpha: 0.25);
 
         h3 {
+          position: relative;
           font-family: $--ff-prime;
+          text-transform: capitalize;
+
+          .icon {
+            position: absolute;
+            margin-left: 0.5rem;
+            cursor: pointer;
+            transition: all 500ms ease;
+
+            &:hover {
+              transform: rotate(360deg);
+            }
+          }
         }
 
         span:nth-child(2){
@@ -396,7 +418,7 @@ header {
         }
 
         .updateStatus {
-          //display: none;
+          display: none;
           width: 70%;
           text-align: center;
         }
@@ -407,6 +429,7 @@ header {
 
         .writer {
           background-color: $--varColor;
+          text-transform: capitalize;
           color: #fff;
           width: 100%;
           padding: 0.25rem;
@@ -415,16 +438,15 @@ header {
 
         .brief {
           font-size: 1.15rem;
-        }
-
-        @media screen and (min-width: 768px) {
-          max-width: 30%;
+          width: 100%;
+          p {
+            max-width: 272px;
+          }
         }
       }
 
       @media screen and (min-width: 768px) {
         margin: 24px 0;
-        display: flex;
       }
     }
   }
@@ -432,7 +454,7 @@ header {
 
 /* Footer Section */
 footer {
-  margin-top: 1.5rem;
+  margin-top: 2.2rem;
   text-align: center;
   font-size: 1.25rem;
   line-height: 1.25rem;
