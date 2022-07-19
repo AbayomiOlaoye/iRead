@@ -331,12 +331,14 @@ header .container .profile {
   width: 100%;
   height: auto;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 0.5rem;
+  padding: 1.5rem;
   margin: auto;
 }
 .library .container .shelf .book-card {
-  width: 60%;
+  width: 100%;
+  height: 350px;
   background-color: #9cebad;
   padding: 0.5rem;
   text-align: center;
@@ -351,7 +353,7 @@ header .container .profile {
 }
 .library .container .shelf .book-card h3 .icon {
   position: absolute;
-  margin-left: 1.5rem;
+  margin-left: 0.5rem;
   cursor: pointer;
   transition: all 500ms ease;
 }
@@ -387,16 +389,14 @@ header .container .profile {
 }
 .library .container .shelf .book-card .brief {
   font-size: 1.15rem;
+  width: 100%;
 }
-@media screen and (min-width: 768px) {
-  .library .container .shelf .book-card {
-    max-width: 30%;
-  }
+.library .container .shelf .book-card .brief p {
+  max-width: 272px;
 }
 @media screen and (min-width: 768px) {
   .library .container .shelf {
     margin: 24px 0;
-    display: flex;
   }
 }
 

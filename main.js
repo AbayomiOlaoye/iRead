@@ -89,7 +89,7 @@ class LibraryShelf {
   static addToList(book) {
     const upBook = document.querySelector('.shelf');
     const newCard = document.createElement('div');
-    newCard.className = ('new-card');
+    newCard.className = ('book-card');
     newCard.innerHTML += `
                 <h3>${book.title} <i class="material-icons icon">cancel</i></h3>
                 <p class="writer">${book.info()}</p>
@@ -109,9 +109,9 @@ class LibraryShelf {
   }
 
   // Delete books
-  removeBook(pop) {
+  static removeBook(pop) {
     if (pop.classList.contains('icon')) {
-      this.LibraryShelf.addToList(null);
+      pop.parentElement.parentElement.remove();
     }
   }
 }
@@ -129,7 +129,7 @@ document.querySelector('.form').addEventListener('submit', (e) => {
   const bookStatus = document.querySelector('#status').value;
   const bookTheme = document.querySelector('#theme').value;
 
-  // Instantiating new book:
+  // Create new book:
   const newBook = new Book(bookTitle, bookAuthor, bookPages, bookStatus, bookTheme);
 
   // Add to List
@@ -153,11 +153,11 @@ document.addEventListener('DOMContentLoaded', () => {
       alert[i].innerHTML = select[i].value;
       select[i].style.display = 'none';
     });
-
-    document.querySelector('.icon')[i].addEventListener('click', () => {
-      LibraryShelf.removeBook(null);
-    });
   }
+});
+
+document.querySelector('.shelf').addEventListener('click', (e) => {
+  LibraryShelf.removeBook(e.target);
 });
 
 // document.querySelector('.icon').forEach((del) => {
